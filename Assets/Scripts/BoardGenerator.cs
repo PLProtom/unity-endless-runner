@@ -11,6 +11,7 @@ public class BoardGenerator : MonoBehaviour
     [SerializeField] private GameObject obstaclePrefab;
     [SerializeField] private Transform obstaclesParent;
     [SerializeField] private List<GameObject> obstacles;
+    [SerializeField] private float obstacleHigh = 1.2f;
 
     private float lastZOffset;
 
@@ -45,7 +46,7 @@ public class BoardGenerator : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(
             Random.Range(boardBorders[0], boardBorders[1]),
-            target .position.y,
+            (target.position.y + obstacleHigh),
             zOffset
             );
         

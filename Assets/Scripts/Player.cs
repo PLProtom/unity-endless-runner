@@ -11,9 +11,14 @@ public class Player : MonoBehaviour
     [SerializeField] private int linesCount = 3;
     private int line = 0;
 
+    public bool movement = true;
+
     private void Update()
     {
-        Move();
+        if(movement == true)
+        {
+            Move();
+        }
     }
 
     private void Move()
