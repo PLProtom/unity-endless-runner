@@ -1,9 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    void EndGame()
+
+    bool gameHasEnded;
+    [SerializeField] private GameObject menu;
+
+    public void EndGame()
     {
-        Debug.Log("GAME OVER");
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            menu.SetActive(true);
+        }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

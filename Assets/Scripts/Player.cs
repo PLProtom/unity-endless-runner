@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public bool movement = true;
 
+
     private void Update()
     {
         if(movement == true)
